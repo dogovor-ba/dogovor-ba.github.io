@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>dogovor freelancing</title>
+<style>
+body {
+	background-color: #111111;
+	color: white;
+	font-family: monospace;
+}
+
+.slika {
+	width: 30px;
+  	margin: 10px;
+  	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.top {
+	text-align: center;
+	margin-bottom: 10px;
+
+}
+
+#slika {
+	width: 100px;
+	border-radius: 50px;
+
+}
+
+.objave {
+	margin: 15px;    
+	background-color: #090909;	
+	padding-top: 1px;
+	padding-left: 5px;
+}
+
+#objavaslika {
+	width: 300px;
+}
+
+#cena {
+	text-align: right;
+	padding: 15px;
+}
+
+.parent {
+	margin-bottom: 70px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+	<img src="logo.png" id="slika">
+	<p>dogovor za buducnost!</p>
+	<div style="margin-bottom: 10px;">
+  		<input type="text" id="search" name="search" placeholder="pretrazi">
+  		<button type="button" onclick="searchDivs()">Traži</button>
+	</div>
+	<a  href="objavi.html">objavi svoju uslugu</a>
+
+</div>
+
+<div class="parent" id="parent">
+    <div class="objave">
+	<h2 id="naziv">petar petrović - izrada web-stranice (primer)</h2>
+	<img id="objavaslika" src="slika.gif">
+	<p>Kao web programer sa višegodišnjim iskustvom u industriji, moj fokus je na razvoju visoko kvalitetnih, skalabilnih i sigurnih veb aplikacija za moje klijente.
+
+Moje veštine uključuju napredno znanje programskih jezika poput HTML, CSS, JavaScript, Python i PHP, kao i iskustvo u radu sa popularnim okvirima kao što su React, Angular i Django. Takođe sam stručan za baze podataka i cloud servise poput AWS i Azure.</p>
+	<h3 id="cena">+387 61 2xx xxx - 200-500 BAM</h3>
+    </div>
+    <div class="objave">
+	<h2 id="naziv">hugo gutić - bodyguard (primer)</h2>
+	<img id="objavaslika" src="slika2.gif">
+	<p>kao profesionalni bodyguard sa višegodišnjim iskustvom, moj glavni cilj je da vam pružim bezbednost i sigurnost u svakoj situaciji. moje veštine i sposobnosti uključuju procenu rizika, taktičko planiranje i efikasnu komunikaciju, a sve to primenjujem u praksi kako bih vam obezbedio najbolju moguću zaštitu. Sa mnom kao vašim bodyguardom, imaćete mirnu glavu i bezbrižan život.</p>
+	<h3 id="cena">+387 61 3xx xxx - 50 BAM / satu</h3>
+    </div>
+
+</div>
+<script>
+function searchDivs() {
+  searchTerm = document.getElementById("search").value;
+  parentDiv = document.getElementById("parent");
+  childDivs = parentDiv.getElementsByTagName("div");
+  for (var i = 0; i < childDivs.length; i++) {
+    div = childDivs[i];
+    text = div.textContent || div.innerText;
+    if (text.indexOf(searchTerm) === -1) {
+      div.style.display = "none";
+    } else {
+      div.style.display = "block";
+    }
+  }
+}
+</script>
+</body>
+</html>
